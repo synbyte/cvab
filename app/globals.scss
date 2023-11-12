@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: whitesmoke;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+ul.nav {
+  display: flex;
+ 
+}
+li {
+  margin: 5px;
+  padding-bottom: 3px ;
+  color:rgb(169, 196, 196);
+}
+ul {
+
+ 
+}

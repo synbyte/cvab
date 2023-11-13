@@ -7,7 +7,9 @@ export default async function getColors() {
 );
 const content =  await response.text();
 const $ = cheerio.load(content);
-const item = $('.cl-line-container p').text();
+const item = $('div.c-line').text();
 cl = item;
-return cl;
+console.log(item,"fd");
+return item;
+
     }

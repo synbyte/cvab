@@ -1,27 +1,17 @@
 "use client"
 import Image from 'next/image'
-
+import './getColors.mjs';
 import { useEffect, useState } from 'react';
-
-import cheerio from 'cheerio';
+import getColors from './getColors.mjs';
 
 export default function Colors() {
-  const [clValue, setClValue] = useState('');
+  const [clValue, setClValue] = useState<string>();
 
-  useEffect( () => {
-    let cl;
-    async function fetchColors() {
-      const response = await fetch("https://lifelineconnections.org/color-line/",{mode: 'no-cors'});
-      const content = await response.text();
-      const $ = cheerio.load(content);
-      const item = $('div.c-line').text();
+  useEffect(() => {
+    getColors().then((item) => {
       setClValue(item);
-     
-    };
-    
-    fetchColors();
-  },[]);
- 
+    });
+  }, []);
 
   return (
     <main className='border min-w-full border-orange-500 border-r-8 text-center text-white shadow-md rounded-lg p-3 bg-slate-600'>

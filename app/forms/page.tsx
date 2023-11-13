@@ -12,7 +12,7 @@ export default async function Home() {
       <div className="border min-w-fit border-slate-500 border-r-8 text-center my-5 text-white shadow-md rounded-2xl p-3 bg-slate-600">
         <p className="text-2xl text-orange-200 font-bold pb-4 ">Forms and Documents</p>
         <ul className="text-left text-orange-300">
-          <p>Drug Court/DOSA Participant Forms</p>
+          <p className='font-bold'>Drug Court/DOSA Participant Forms</p>
           <li><a href="https://clark.wa.gov/media/document/56217">Drug Court team contact list</a></li>
           
           <li><a href="https://clark.wa.gov/media/document/56218">DOSA team contact list</a></li>
@@ -31,7 +31,7 @@ export default async function Home() {
           <li><a href="https://clark.wa.gov/media/document/152841">Personal Budget form - excel version</a></li>
           <li><a href="https://clark.wa.gov/media/document/78361">Personal Budget form - pdf fillable version</a></li>
           <li><a href="https://clark.wa.gov/media/document/56228">Drug Court/DOSA Exit Interview</a></li>
-          <p>Family Treatment Court Participant Forms</p>
+          <p className='font-bold'>Family Treatment Court Participant Forms</p>
           <li><a href="https://clark.wa.gov/media/document/117136">FTC team contact list </a></li>
           <li><a href="https://clark.wa.gov/media/document/56230">Introduction to Family Treatment Court</a></li>
           <li><a href="https://clark.wa.gov/media/document/56223">Community service log with sites</a></li>

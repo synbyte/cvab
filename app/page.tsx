@@ -1,4 +1,4 @@
-"use server"
+"use client"
 import Image from 'next/image'
 import Colors from './colors';
 import Links from './links';

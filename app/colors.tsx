@@ -1,4 +1,3 @@
-"use client"
 
 
 import cheerio from 'cheerio';
@@ -13,8 +12,8 @@ async function getColors() {
 }
 export default async function Colors() {
  
-  const c = await getColors();
-
+  const c: string = await getColors();
+  
   
  
 

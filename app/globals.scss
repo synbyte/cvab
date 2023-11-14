@@ -1,34 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
 :root {
   --tw-gradient-stops: red;
+
 }
+
+main {
+  font-family: 'Raleway';
+}
+
 body {
   background: whitesmoke;
+  font-family: 'Raleway', sans-serif;
 }
+
 nav {
   display: flex;
   justify-content: center;
   align-items: center;
- 
+  font-family: 'Raleway';
+
 }
+
 ul.nav {
   display: flex;
- 
+
 }
+
 li {
   margin: 5px;
-  padding-bottom: 3px ;
-  color:rgb(169, 196, 196);
+  padding-bottom: 3px;
+  color: rgb(169, 196, 196);
 }
-ul {
 
- 
-}
+ul {}
+
 .heading {
-  
-    text-shadow: 0 5px 5px black;
-    
+
+  text-shadow: 0 5px 5px black;
+
+
 }

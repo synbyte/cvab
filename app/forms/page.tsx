@@ -14,7 +14,7 @@ export default async function Home() {
         <ul className="text-left text-orange-300">
           <p className='font-bold'>Drug Court/DOSA Participant Forms</p>
           <li><a href="https://clark.wa.gov/media/document/56217">Drug Court team contact list</a></li>
-          
+
           <li><a href="https://clark.wa.gov/media/document/56218">DOSA team contact list</a></li>
           <li><a href="https://clark.wa.gov/media/document/56220">Application to phase up to 2 Drug Court</a></li>
           <li><a href="https://clark.wa.gov/media/document/56221">Application to phase up to 3 Drug Court</a></li>

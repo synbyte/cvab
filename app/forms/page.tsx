@@ -1,7 +1,7 @@
 
 import Image from 'next/image'
-import Colors from '../colors';
-import Links from '../links';
+import Colors from '../../components/Colors';
+import Links from '../../components/Links';
 import { useEffect, useState } from 'react';
 
 export default async function Home() {

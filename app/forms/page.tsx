@@ -8,12 +8,12 @@ export default async function Home() {
 
 
   return (
-    <main className="flex bg-slate-800 min-w-full min-h-screen flex-col items-center p-5">
-      <div className="border w-4/5 border-slate-500 border-r-8 text-center my-5 text-white shadow-md rounded-2xl p-3 bg-slate-600">
-      <p className="text-2xl text-orange-200 heading font-bold pb-4 ">Forms and Documents</p>
-        <div className=' md:grid md:grid-cols-2'>
+    <main className="items-center p-5 min-w-full min-h-screen bg-slate-800">
+      <div className="grid p-3 mx-auto w-4/5 text-center text-white rounded-2xl border border-r-8 shadow-md gmy-5 border-slate-500 bg-slate-600">
+      <p className="pb-4 text-2xl font-bold text-orange-200 heading">Forms and Documents</p>
+        <div className='md:grid md:grid-cols-2'>
         <div>
-        <ul className="text-left md:text-center text-orange-300">
+        <ul className="text-left text-orange-300 md:text-center">
           <p className='font-bold'>Drug Court/DOSA Participant Forms</p>
           <li><a href="https://clark.wa.gov/media/document/56217">Drug Court team contact list</a></li>
 
@@ -33,7 +33,7 @@ export default async function Home() {
           <li><a href="https://clark.wa.gov/media/document/152841">Personal Budget form - excel version</a></li>
           <li><a href="https://clark.wa.gov/media/document/78361">Personal Budget form - pdf fillable version</a></li>
           <li><a href="https://clark.wa.gov/media/document/56228">Drug Court/DOSA Exit Interview</a></li></ul></div>
-          <ul className='text-left md:text-center text-orange-300'>
+          <ul className='text-left text-orange-300 md:text-center'>
           <p className='font-bold'>Family Treatment Court Participant Forms</p>
           <li><a href="https://clark.wa.gov/media/document/117136">FTC team contact list </a></li>
           <li><a href="https://clark.wa.gov/media/document/56230">Introduction to Family Treatment Court</a></li>

@@ -20,9 +20,9 @@ export default async function Colors() {
   return (
     <>
 
-      <main className='colors border border-orange-500 border-r-8 text-center text-white shadow-md rounded-2xl p-3 bg-slate-600'>
+      <main className='p-3 text-center text-white rounded-2xl border border-r-8 border-orange-500 shadow-md colors bg-slate-600'>
         <div >
-          <p className='text-2xl heading text-orange-200 pb-3 font-bold'>Colorline</p>
+          <p className='pb-3 text-2xl font-bold text-orange-200 heading'>Colorline</p>
           <p dangerouslySetInnerHTML={{ __html: await getColors() ?? 'No Colors/Closed'}}></p>
 
           <ul><li> </li>

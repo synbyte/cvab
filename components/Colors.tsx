@@ -27,10 +27,10 @@ export default async function Colors() {
     <>
 
       <main className='p-3 text-center text-white rounded-2xl     bg-slate-600 shadow-md shadow-black hover:shadow-sm hover:shadow-black transition '>
-        <div >
+        <div className=''>
           <p className='pb-3 text-2xl font-bold text-orange-200 heading'>Colorline</p>
-          <div dangerouslySetInnerHTML={{ __html: await getColors() ?? ''}}></div>
-
+          <div className=" font-bold w-5/6 mx-auto" dangerouslySetInnerHTML={{ __html: await getColors() ?? ''}}></div>
+          
           <ul><li> </li>
           </ul>
         </div>

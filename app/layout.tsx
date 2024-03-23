@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
 
       <body className={inter.className}>
-        <nav className='absolute top-0 text-white  bg-gradient-to-tr from-slate-800 to-black  fixed w-full py-3 shadow-md  shadow-orange-900'><ul className='nav space-x-5   font-black text-lg'><li className='transition hover:-translate-y-1'><a  id='link'href="/">|Home</a></li ><li className='transition hover:-translate-y-1'><a id='link' href="/forms">|Forms</a></li></ul> <a href="https://treatment-court.clark.wa.gov/?id=1"><button className="py-1 px-1 my-3 text-cyan-500 font-bold bg-slate-900 outline outline-offset-2 outline-cyan-500 rounded-lg outline-1 outline-dotted outline-offset-4 hover:outline absolute right-5 top-0  transition">Web Report</button></a></nav>
+        <nav className='absolute top-0 text-white  bg-gradient-to-tr from-slate-800 to-black  fixed w-full py-3 shadow-md  shadow-orange-900'><ul className='nav space-x-5   font-black text-lg'><li className='transition hover:-translate-y-1'><a  id='link'href="/">┘Home┌</a></li ><li className='transition hover:-translate-y-1'><a id='link' href="/forms">┘Forms┌</a></li></ul> <a href="https://treatment-court.clark.wa.gov/?id=1"><button className="py-1 px-1 my-3 text-cyan-500 font-bold bg-slate-900 outline outline-offset-2 outline-cyan-500 rounded-lg outline-1 outline-dotted outline-offset-4 hover:outline absolute right-5 top-0  transition">Web Report</button></a></nav>
         <div className='mt-16'>{children}</div></body>
     </html>
   )

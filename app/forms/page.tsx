@@ -8,7 +8,7 @@ export default async function Home() {
 
 
   return (
-    <main className="items-center p-5 min-w-full min-h-screen bg-gradient-to-tr from-orange-400 to-slate-500">
+    <main className="items-center p-5 min-w-full min-h-screen bg-gradient-to-tr from-orange-400 to-slate-500 pt-20">
       <div className="grid p-3 mx-auto text-center text-white rounded-2xl border border-r-8 shadow-md gmy-5 border-slate-500 bg-slate-600 md:w-5/6">
       <p className="pb-4 text-2xl font-bold text-orange-200 heading">Forms and Documents</p>
         <div className='md:grid md:grid-cols-2'>

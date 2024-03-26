@@ -9,7 +9,7 @@ export default  function Home() {
 
 
   return (
-    <main className="items-center p-5 min-w-full min-h-screen bg-amber-100 pt-20">
+    <main className="items-center p-5 min-w-full min-h-screen bg-gradient-to-br from-cyan-50 to-cyan-800 pt-20">
       
       <div className='grid gap-4 mx-auto md:grid-cols-2 md:w-5/6'> 
         <Colors />

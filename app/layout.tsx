@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
 
       <body className={inter.className}>
-        <nav className='fixed top-0 text-white fixed w-full py-3 shadow-md shadow-gray-900 bg-amber-950 rounded-b-2xl border-b-2 border-slate-500'><ul className='nav font-black text-lg space-x-5'><li className='transition hover:-translate-y-1'><a  id='link'href="/">Home</a></li ><li className='transition hover:-translate-y-1'><a id='link' href="/forms">Forms</a></li><li className='transition hover:-translate-y-1 text-orange-300'><a id='link' href="https://treatment-court.clark.wa.gov/?id=1">Web Report</a></li></ul> </nav>
+        <nav className='fixed top-0  fixed w-full py-3 shadow-md shadow-gray-900 bg-cyan-800 rounded-b-2xl border-b-2 border-cyan-500'><ul className='nav text-cyan-100 text-lg space-x-5'><li className='transition hover:-translate-y-0.5'><a  id='link'href="/">Home</a></li ><li className='transition hover:-translate-y-0.5'><a id='link' href="/forms">Forms</a></li><li className='transition hover:-translate-y-0.5 text-orange-300'><a id='link' href="https://treatment-court.clark.wa.gov/?id=1">Web Report</a></li></ul> </nav>
         <div className=''>{children}</div></body>
     </html>
   )

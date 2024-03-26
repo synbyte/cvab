@@ -8,13 +8,13 @@ export default async function Home() {
 
 
   return (
-    <main className="items-center p-5 min-w-full min-h-screen bg-gradient-to-tr from-orange-400 to-slate-500 pt-20">
-      <div className="grid p-3 mx-auto text-center text-white rounded-2xl border border-r-8 shadow-md gmy-5 border-slate-500 bg-slate-600 md:w-5/6">
-      <p className="pb-4 text-2xl font-bold text-orange-200 heading">Forms and Documents</p>
+    <main className="items-center p-5 min-w-full min-h-screen bg-gradient-to-br from-cyan-50 to-cyan-800 pt-20">
+      <div className="grid p-3 mx-auto text-center text-white rounded-2xl shadow-md shadow-black bg-cyan-200 md:w-5/6">
+      <p className="pb-4 text-2xl font-bold text-cyan-800 heading">Forms and Documents</p>
         <div className='md:grid md:grid-cols-2'>
         <div>
-        <ul className="text-left text-orange-300 md:text-center">
-          <p className='font-bold'>Drug Court/DOSA Participant Forms</p>
+        <ul className="text-left text-cyan-700 md:text-center">
+          <p className='font-bold text-cyan-500'>Drug Court/DOSA Participant Forms</p>
           <li><a href="https://clark.wa.gov/media/document/56217">Drug Court team contact list</a></li>
 
           <li><a href="https://clark.wa.gov/media/document/56218">DOSA team contact list</a></li>
@@ -33,8 +33,8 @@ export default async function Home() {
           <li><a href="https://clark.wa.gov/media/document/152841">Personal Budget form - excel version</a></li>
           <li><a href="https://clark.wa.gov/media/document/78361">Personal Budget form - pdf fillable version</a></li>
           <li><a href="https://clark.wa.gov/media/document/56228">Drug Court/DOSA Exit Interview</a></li></ul></div>
-          <ul className='text-left text-orange-300 md:text-center'>
-          <p className='font-bold'>Family Treatment Court Participant Forms</p>
+          <ul className='text-left text-cyan-700 md:text-center'>
+          <p className='font-bold text-cyan-500'>Family Treatment Court Participant Forms</p>
           <li><a href="https://clark.wa.gov/media/document/117136">FTC team contact list </a></li>
           <li><a href="https://clark.wa.gov/media/document/56230">Introduction to Family Treatment Court</a></li>
           <li><a href="https://clark.wa.gov/media/document/56223">Community service log with sites</a></li>

@@ -27,7 +27,7 @@ export default async function Colors() {
   return (
     <>
 
-      <main className='p-3 text-center text-white rounded-2xl  bg-cyan-100 shadow-sm shadow-black'>
+      <main className='p-3 text-center text-white rounded-2xl  bg-cyan-50 shadow-sm shadow-black'>
         <div className=''>
           <p className='pb-3 text-2xl font-bold text-cyan-800 heading'>Colorline</p>
           <div className='bg-cyan-300 outline outline-offset-2 rounded-sm outline-cyan-600 text-cyan-700 mb-5'><p><strong>Complete <span id='webreport'>Web Report</span> By Wednesday Before Court!</strong></p></div> 

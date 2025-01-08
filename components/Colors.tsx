@@ -30,7 +30,7 @@ export default async function Colors() {
       <main className='p-3 text-center text-white rounded-2xl  bg-cyan-50 shadow-sm shadow-black'>
         <div className=''>
           <p className='pb-3 text-2xl font-bold text-cyan-800 heading'>Colorline</p>
-          <div className='bg-cyan-300 outline outline-offset-2 rounded-sm outline-cyan-600 text-cyan-700 mb-5'><p><strong>Complete <span id='webreport'>Web Report</span> By Wednesday Before Court!</strong></p></div> 
+          <div className='bg-cyan-300 outline outline-offset-2 rounded-sm mx-10 outline-cyan-600 text-cyan-700 mb-5 text-sm'><p><strong>Complete <span id='webreport'>Web Report</span> by Wednesday before court 6pm(DOSA) or 12pm(DC)!</strong></p></div> 
           
           <div className="bg-cyan-700 rounded-lg shadow-md shadow-black border-cyan-500 border-2 p-3  w-5/6 mx-auto" dangerouslySetInnerHTML={{ __html: await getColors() ?? ''}}></div>
           

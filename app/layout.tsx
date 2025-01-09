@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Raleway } from "next/font/google";
 import "./globals.scss";
 
-const inter = Inter({ subsets: ["latin"] });
+const raleway = Raleway({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -30,7 +30,7 @@ export default function RootLayout({
           flexDirection: "column",
           alignItems: "center",
         }}
-        className={`${inter.className}`}
+        className={`${raleway.className}`}
       >
         <nav className="top-0 z-50 fixed w-full py-3 shadow shadow-gray-400 bg-cyan-50/70 backdrop-blur-md rounded-b-2xl align-baseline flex">
           <ul className="nav text-cyan-900 text-sm md:text-lg space-x-5 ">

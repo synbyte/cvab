@@ -1,11 +1,14 @@
 "use client"
 import { usePathname } from "next/navigation"
+import { Raleway } from 'next/font/google'
+
+const raleway = Raleway({ subsets: ['latin'] })
 
 export default function Nav() {
     const pathname = usePathname()
     return (
-        <nav className={`top-0 z-50 fixed w-full py-3 shadow shadow-gray-400 bg-cyan-50/10 backdrop-blur-lg  align-baseline flex $`}>
-          <ul className={`nav text-cyan-900 text-sm md:text-lg space-x-5 `}>
+        <nav className={`${raleway.className} top-0 z-50 fixed w-full py-3 shadow shadow-gray-400 bg-cyan-50/10 backdrop-blur-lg align-baseline flex`}>
+          <ul className={`nav text-cyan-900 text-sm md:text-lg space-x-5`}>
             <li className="">
               <a id="link" href="/"
               className={pathname === '/' ? 'underline underline-offset-4' : ''}>

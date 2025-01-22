@@ -35,8 +35,13 @@ ul.nav {
 
 li {
   margin: 5px;
-  padding-bottom: 3px;
- 
+  padding-bottom: 0px;
+ transition: all 1.5s;
+}
+
+li:hover {
+  text-shadow: 2px 2px 2px rgb(184, 184, 184);
+  transition: all 0.1s;
 }
 
 #link {

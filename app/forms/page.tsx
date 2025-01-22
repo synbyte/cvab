@@ -5,7 +5,7 @@ export default async function Home() {
 
   return (
     <main className="items-center p-5 min-w-full min-h-screen  pt-20">
-      <div className="grid p-3 mx-auto text-center text-white rounded-2xl shadow-md shadow-black bg-cyan-50/70 backdrop-blur-md md:w-5/6">
+      <div className="grid p-3 mx-auto text-center text-white rounded-2xl shadow-sm shadow-black bg-cyan-50/10 backdrop-blur-sm md:w-5/6">
       <p className="pb-4 text-2xl font-bold text-cyan-800 heading">Forms and Documents</p>
         <div className='md:grid md:grid-cols-2'>
         <div>

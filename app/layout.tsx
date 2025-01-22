@@ -19,7 +19,7 @@ export default function RootLayout({
       <body
         style={{
           backgroundImage:
-            "url(https://www.toptal.com/designers/subtlepatterns/uploads/diagonal-squares.png)",
+            "url(https://www.toptal.com/designers/subtlepatterns/uploads/double-bubble-outline.png)",
           backgroundSize: "tile",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -33,7 +33,7 @@ export default function RootLayout({
         }}
         className={`${raleway.className}`}
       >
-        <nav className={`top-0 z-50 fixed w-full py-3 shadow shadow-gray-400 bg-cyan-50/70 backdrop-blur-md rounded-b-2xl align-baseline flex ${raleway.className}`}>
+        <nav className={`top-0 z-50 fixed w-full py-3 shadow shadow-gray-400 bg-cyan-50/10 backdrop-blur-lg  align-baseline flex ${raleway.className}`}>
           <ul className={`nav text-cyan-900 text-sm md:text-lg space-x-5 ${raleway.className}`}>
             <li className="transition hover:-translate-y-0.5">
               <a id="link" href="/">

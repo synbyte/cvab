@@ -1,7 +1,7 @@
 export default async function Home() {
   return (
     <main className="items-center p-5 min-w-full min-h-screen  pt-20">
-      <div className="p-3 mx-auto text-center rounded-2xl shadow-md shadow-black bg-cyan-50/70 backdrop-blur-md w-full">
+      <div className="p-3 mx-auto text-center rounded-2xl shadow-sm shadow-black bg-cyan-50/10 backdrop-blur-sm w-full">
         <p className="pb-4 text-2xl font-bold text-cyan-800 heading">Support</p>
         <div className="md:grid md:grid-cols-2">
           <div className="flex flex-col mx-3">

@@ -33,8 +33,8 @@ export default function RootLayout({
         }}
         className={`${raleway.className}`}
       >
-        <nav className="top-0 z-50 fixed w-full py-3 shadow shadow-gray-400 bg-cyan-50/70 backdrop-blur-md rounded-b-2xl align-baseline flex">
-          <ul className="nav text-cyan-900 text-sm md:text-lg space-x-5 ">
+        <nav className={`top-0 z-50 fixed w-full py-3 shadow shadow-gray-400 bg-cyan-50/70 backdrop-blur-md rounded-b-2xl align-baseline flex ${raleway.className}`}>
+          <ul className={`nav text-cyan-900 text-sm md:text-lg space-x-5 ${raleway.className}`}>
             <li className="transition hover:-translate-y-0.5">
               <a id="link" href="/">
                 Home
@@ -55,7 +55,7 @@ export default function RootLayout({
                 Web Report
               </a>
             </li>
-          </ul>{" "}
+          </ul>
         </nav>
         <div>{children}</div>
       </body>

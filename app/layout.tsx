@@ -1,6 +1,8 @@
+
 import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
 import "./globals.scss";
+import Nav from "@/components/Nav";
 
 const raleway = Raleway({ subsets: ["latin"] });
 
@@ -32,31 +34,8 @@ export default function RootLayout({
           alignItems: "center",
         }}
         className={`${raleway.className}`}
-      >
-        <nav className={`top-0 z-50 fixed w-full py-3 shadow shadow-gray-400 bg-cyan-50/10 backdrop-blur-lg  align-baseline flex ${raleway.className}`}>
-          <ul className={`nav text-cyan-900 text-sm md:text-lg space-x-5 ${raleway.className}`}>
-            <li className="transition hover:-translate-y-0.5">
-              <a id="link" href="/">
-                Home
-              </a>
-            </li>
-            <li className="transition hover:-translate-y-0.5">
-              <a id="link" href="/support">
-                Groups/Resources
-              </a>
-            </li>
-            <li className="transition hover:-translate-y-0.5">
-              <a id="link" href="/forms">
-                Forms
-              </a>
-            </li>
-            <li className="transition hover:-translate-y-0.5 text-orange-500 font-bold">
-              <a id="link" href="https://treatment-court.clark.wa.gov/?id=1">
-                Web Report
-              </a>
-            </li>
-          </ul>
-        </nav>
+      ><Nav />
+       
         <div>{children}</div>
       </body>
     </html>

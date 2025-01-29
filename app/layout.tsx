@@ -4,6 +4,9 @@ import { Raleway } from "next/font/google";
 import "./globals.scss";
 import Nav from "@/components/Nav";
 import Head from "next/head";
+import { CopilotKit } from "@copilotkit/react-core";
+import { CopilotPopup } from "@copilotkit/react-ui";
+import "@copilotkit/react-ui/styles.css";
 
 const raleway = Raleway({ subsets: ["latin"] });
 
@@ -41,9 +44,15 @@ export default function RootLayout({
           alignItems: "center",
         }}
         className={`${raleway.className}`}
-      ><Nav />
+      ><CopilotKit publicApiKey="ck_pub_b6c29a1db431c592d75d490eace6c893"><Nav />
        
-        <div>{children}</div>
+        <div>{children}      <CopilotPopup 
+        instructions={"You are an assistant for the therapeutic courts information hub. Answer only with information you have. If you dont have the information, recommend the user to reach out to their case manager. All Drug Court documents also pertain to DOSA."}
+        labels={{
+          title: "Cousin Spinny",
+          initial: "What can I help you find?",
+        }}
+      /></div></CopilotKit>
       </body>
     </html>
   );

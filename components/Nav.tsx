@@ -2,12 +2,32 @@
 import { usePathname } from "next/navigation"
 import { Raleway } from 'next/font/google'
 import { useEffect, useState } from "react"
+import { useCopilotReadable } from "@copilotkit/react-core"
+import { formData } from "@/app/data/formData";
+import { supportData } from "@/app/data/supportData";
+import { docketData } from "@/app/data/docketData";
 
 const raleway = Raleway({ subsets: ['latin'] })
+
+
 
 export default function Nav() {
     const pathname = usePathname()
     const [isOpen, setIsOpen] =useState(false)
+
+
+    useCopilotReadable({
+      description:"Therapeutic Courts Forms and Documents",
+      value: formData,
+    })
+    useCopilotReadable({
+      description:"Support groups and resources",
+      value: supportData,
+    })
+    useCopilotReadable({
+      description:"Information on court dockets and zoom links",
+      value: docketData,
+    })
 
    useEffect(() => {
         const handleClickOutside = (event:any) => {

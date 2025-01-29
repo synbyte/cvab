@@ -21,7 +21,7 @@ export default function Nav() {
     }, [])
 
     return (
-        <nav className={`${raleway.className} top-0 z-50 fixed w-full py-3 shadow shadow-gray-400 bg-cyan-50/10 backdrop-blur-lg align-baseline flex`}>
+        <nav className={`${raleway.className} top-0 z-40 fixed w-full py-3 shadow shadow-gray-400 bg-cyan-50/10 backdrop-blur-lg align-baseline flex`}>
           <ul className={`nav text-cyan-900 text-sm md:text-lg space-x-5`}>
             <li className="">
               <a id="link" href="/"

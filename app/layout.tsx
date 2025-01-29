@@ -3,12 +3,15 @@ import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
 import "./globals.scss";
 import Nav from "@/components/Nav";
+import Head from "next/head";
 
 const raleway = Raleway({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "CCDC",
-  description: "Clark County Drug Court",
+  title: "TC-Info",
+  description: "Therapeutic Courts Information",
+  themeColor: "#000000",
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({
@@ -18,6 +21,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Head>
+      <link rel="manifest" href="/manifest.json" />
+      <meta name="theme-color" content="#000000" />
+      </Head>
       <body
         style={{
           backgroundImage:

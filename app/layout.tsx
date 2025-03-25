@@ -1,4 +1,4 @@
-
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
 import "./globals.scss";
@@ -52,7 +52,7 @@ export default function RootLayout({
           title: "Cousin Spinny",
           initial: "What can I help you find?",
         }}
-      /></div></CopilotKit>
+      /></div></CopilotKit><Analytics/>
       </body>
     </html>
   );

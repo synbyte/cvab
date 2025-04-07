@@ -21,16 +21,16 @@ export default async function Colors() {
     <>
       <main className="p-3 text-center text-white rounded-2xl  bg-cyan-50/10 backdrop-blur-sm shadow-sm shadow-gray-400">
         <div className="">
-          <p className="pb-3 text-2xl font-bold text-cyan-800 heading">
+          <p className="bg-gradient-to-r from-orange-500 to-fuchsia-500 via-cyan-500 bg-clip-text text-2xl font-extrabold text-transparent">
             Colorline
           </p>
-          <div className="bg-cyan-400 outline outline-offset-2 rounded-sm mx-10 outline-cyan-600 text-cyan-700 mb-5 text-sm">
-            <p>
+          <div className="bg-cyan-400 ring-1 ring-sky-500 mx-5 rounded-md text-cyan-700 mb-5 text-sm">
+            <p className='text-xs font-light uppercase tracking-wide font-mono'>
               <strong>
-                Complete <span className="text-orange-600">Web Report</span> by
+                Complete <span className="text-orange-600 animate-pulse font-bold">Web Report</span> by
                 Wednesday before court{" "}
-                <span className="text-orange-600">6pm</span>(DOSA) or{" "}
-                <span className="text-orange-600">12pm</span>(DC)!
+                <span className="text-orange-600 animate-pulse font-bold">6pm</span>(DOSA) or{" "}
+                <span className="text-orange-600 animate-pulse font-bold">12pm</span>(DC)!
               </strong>
             </p>
           </div>

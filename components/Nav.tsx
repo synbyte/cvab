@@ -42,32 +42,32 @@ export default function Nav() {
 
     return (
         <nav className={`${raleway.className} top-0 z-40 fixed w-full py-3 shadow shadow-gray-400 bg-cyan-50/10 backdrop-blur-lg align-baseline flex`}>
-          <ul className={`nav text-cyan-900 text-sm md:text-lg space-x-5`}>
+          <ul className={`nav text-cyan-900 text-sm md:text-lg space-x-2 md:space-x-8`}>
             <li className="">
               <a id="link" href="/"
-              className={pathname === '/' ? 'underline underline-offset-4' : ''}>
+              className={pathname === '/' ? 'underline decoration-1 decoration-wavy transition-all underline-offset-4' : ''}>
                 Home
               </a>
             </li>
             <li className="">
               <a id="link" href="/support"
-              className={pathname === '/support' ? 'underline underline-offset-4' : ''}>
+              className={pathname === '/support' ? 'underline decoration-1 decoration-wavy transition-all underline-offset-4' : ''}>
                 Groups/Resources
               </a>
             </li>
             <li className="">
               <a id="link" href="/forms"
-              className={pathname === '/forms' ? 'underline underline-offset-4 ' : ''}>
+              className={pathname === '/forms' ? 'underline decoration-1 decoration-wavy transition-all underline-offset-4 ' : ''}>
                 Forms
               </a>
             </li>
             <li className="text-orange-500 font-bold relative dropdown-container">
-              <span className="cursor-pointer" onClick={() => setIsOpen(!isOpen)}>Web Report</span>
-              <div className={`absolute ${isOpen ? 'block' : 'hidden'} bg-white shadow-lg rounded-md mt-2`}>
-                <a href="https://treatment-court.clark.wa.gov/?id=1" className="block px-4 py-2 hover:bg-gray-100">
-                  DC/DOSA
+              <span className="cursor-pointer text-shadow-md truncate bg-orange-500/20 border-2 border-orange-500 hover:bg-orange-500/30 transition-all rounded-full p-1" onClick={() => setIsOpen(!isOpen)}>Web Report</span>
+              <div className={`absolute right-1 ${isOpen ? 'block' : 'hidden'} bg-white shadow-lg rounded-md mt-2`}>
+                <a id="drop" href="https://treatment-court.clark.wa.gov/?id=1" className="drop block px-4 py-2 hover:bg-gray-100 font-medium">
+                  DC/DOSA/FTC
                 </a>
-                <a href="https://treatment-court.clark.wa.gov/?id=2" className="block px-4 py-2 hover:bg-gray-100">
+                <a href="https://treatment-court.clark.wa.gov/?id=2" className="drop block px-4 py-2 hover:bg-gray-100 font-medium">
                   Other
                 </a>
               </div>

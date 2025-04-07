@@ -19,7 +19,7 @@ async function getColors(): Promise<string | null> {
 export default async function Colors() {
   return (
     <>
-      <main className="p-3 text-center text-white rounded-2xl  bg-cyan-50/10 backdrop-blur-sm shadow-sm shadow-gray-400">
+      <main className=" animate-slide-down  p-3 text-center text-white rounded-2xl  bg-cyan-50/10 backdrop-blur-sm shadow-sm shadow-gray-400">
         <div className="">
           <p className="bg-gradient-to-r from-orange-500 to-fuchsia-500 via-cyan-500 bg-clip-text text-2xl font-extrabold text-transparent">
             Colorline

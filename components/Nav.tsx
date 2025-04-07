@@ -63,11 +63,11 @@ export default function Nav() {
             </li>
             <li className="text-orange-500 font-bold relative dropdown-container">
               <span className="cursor-pointer text-shadow-md truncate bg-orange-500/20 border-2 border-orange-500 hover:bg-orange-500/30 transition-all rounded-full p-1" onClick={() => setIsOpen(!isOpen)}>Web Report</span>
-              <div className={`absolute right-1 ${isOpen ? 'block' : 'hidden'} bg-white shadow-lg rounded-md mt-2`}>
-                <a id="drop" href="https://treatment-court.clark.wa.gov/?id=1" className="drop block px-4 py-2 hover:bg-gray-100 font-medium">
+              <div className={`absolute right-1 animate-slide-down ${isOpen ? 'block' : 'hidden'} bg-white shadow-lg rounded-md mt-2`}>
+                <a id="drop" href="https://treatment-court.clark.wa.gov/?id=1" className="drop block px-4 py-2 hover:bg-gray-100 font-medium text-xs">
                   DC/DOSA/FTC
                 </a>
-                <a href="https://treatment-court.clark.wa.gov/?id=2" className="drop block px-4 py-2 hover:bg-gray-100 font-medium">
+                <a href="https://treatment-court.clark.wa.gov/?id=2" className="drop block px-4 py-2 hover:bg-gray-100 font-medium text-xs">
                   Other
                 </a>
               </div>

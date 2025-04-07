@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Finder() {
   return (
-    <div className=" md:w-5/6 mx-auto my-5  text-center  text-white shadow-sm shadow-gray-400 rounded-2xl p-3 bg-cyan-50/10 backdrop-blur-sm">
+    <div className=" animate-slide-down  md:w-5/6 mx-auto my-5  text-center  text-white shadow-sm shadow-gray-400 rounded-2xl p-3 bg-cyan-50/10 backdrop-blur-sm">
       <p className=" text-2xl font-medium text-cyan-800 heading">
         AA Group Finder
       </p>

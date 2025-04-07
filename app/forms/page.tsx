@@ -1,7 +1,7 @@
 import { formData } from "../data/formData";
 export default async function Home() {
   return (
-    <main className="items-center p-5 min-w-full min-h-screen pt-20">
+    <main className=" animate-slide-down items-center p-5 min-w-full min-h-screen pt-20">
       <div className="grid p-3 mx-auto text-center text-white rounded-2xl shadow-sm shadow-gray-400 bg-cyan-50/10 backdrop-blur-sm md:w-5/6">
         <p className="pb-4 text-2xl font-medium text-cyan-800 heading">
           Forms and Documents

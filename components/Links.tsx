@@ -2,7 +2,7 @@ import { docketData } from "@/app/data/docketData";
 
 export default function Links() {
   return (
-    <main className="p-3 text-center text-black rounded-2xl shadow-sm card shadow-gray-400 min-w-fit bg-cyan-50/10 backdrop-blur-sm">
+    <main className=" animate-slide-down p-3 text-center text-black rounded-2xl shadow-sm card shadow-gray-400 min-w-fit bg-cyan-50/10 backdrop-blur-sm">
       <p className="pb-4 text-2xl font-medium text-cyan-800 heading ">
         Docket Zoom Links
       </p>

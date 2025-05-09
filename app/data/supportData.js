@@ -7,8 +7,8 @@ export const supportData = {
         east: "(360) 253-4036"
       },
       links: [
-        { href: "https://www.cvabonline.org/s/Pier360-West-January-2025-Final.pdf", text: "West center calendar" },
-        { href: "https://www.cvabonline.org/s/Pier360-East-January-2025-Final.pdf", text: "East center calendar" },
+        { href: "https://www.cvabonline.org/s/Pier360-West-May-2025.pdf", text: "West center calendar" },
+        { href: "https://www.cvabonline.org/s/Pier360-East-May-2025.pdf", text: "East center calendar" },
         { href: "https://www.cvabonline.org/services", text: "Information on services provided" },
         { href: "https://www.cvabonline.org/training", text: "Pier 360 Academy" },
         { href: "https://www.cvabonline.org/warmline", text: "Warm Line" }

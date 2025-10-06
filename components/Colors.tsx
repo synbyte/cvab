@@ -1,23 +1,25 @@
 import cheerio from "cheerio";
 
 async function getColors(): Promise<string | null> {
-  const response = await fetch("https://lifelineconnections.org/color-line/", {
-    method: "GET",
-    mode: "no-cors",
-    headers: {
-      "Content-Type": "text/html",
-    },
-    next: { revalidate: 0 },
-    cache: "no-store",
-  });
-  const content = await response.text();
-  const $ = cheerio.load(content);
-  const item = $(".cl-line-container").html();
-  console.log("Colors fetched: ", $(".cl-line-container div").text());
-  return item;
-} catch (error) {
-  console.error("Error fetching colors: ", error);
-  return "<div class='text-red-500'>Error fetching colors, check Lifeline Connections website.</div>";
+  try {
+    const response = await fetch("https://lifelineconnections.org/color-line/", {
+      method: "GET",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "text/html",
+      },
+      next: { revalidate: 0 },
+      cache: "no-store",
+    });
+    const content = await response.text();
+    const $ = cheerio.load(content);
+    const item = $(".cl-line-container").html();
+    console.log("Colors fetched: ", $(".cl-line-container div").text());
+    return item;
+  } catch (error) {
+    console.error("Error fetching colors: ", error);
+    return "<div class='text-red-500'>Error fetching colors, check Lifeline Connections website.</div>";
+  }
 }
 
 export default async function Colors() {

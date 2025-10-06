@@ -7,7 +7,7 @@ export const supportData = {
         east: "(360) 253-4036"
       },
       links: [
-        { href: "https://www.pier360.org/_files/ugd/a5e4e2_62d6338bfc8141a2adcfb7aa7bf554d9.pdf", text: "Center calendar" },
+        { href: "https://www.pier360.org/_files/ugd/a5e4e2_a3d7153405b6407bba1e3696f6099c8c.pdf", text: "Center calendar" },
         { href: "https://www.pier360.org/services", text: "Information on services provided" },
         { href: "https://www.pier360.org/academy", text: "Pier 360 Academy" },
         { href: "https://www.pier360.org/warmline", text: "Warm Line" }

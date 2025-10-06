@@ -18,7 +18,7 @@ async function getColors(): Promise<string | null> {
     return item;
   } catch (error) {
     console.error("Error fetching colors: ", error);
-    return "<div class='text-red-500'>Error fetching colors, check Lifeline Connections website.</div>";
+    return "<div class='text-red-100 bg-red-500/60 p-3 rounded-md border-red-500 border-2 font-bold'>Error fetching colors, check Lifeline Connections website.</div>";
   }
 }
 

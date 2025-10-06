@@ -15,7 +15,11 @@ async function getColors(): Promise<string | null> {
   const item = $(".cl-line-container").html();
   console.log("Colors fetched: ", $(".cl-line-container div").text());
   return item;
+} catch (error) {
+  console.error("Error fetching colors: ", error);
+  return "<div class='text-red-500'>Error fetching colors, check Lifeline Connections website.</div>";
 }
+
 export default async function Colors() {
   return (
     <>
@@ -25,12 +29,21 @@ export default async function Colors() {
             Colorline
           </p>
           <div className="bg-cyan-400 ring-1 ring-sky-500 mx-5 rounded-md text-cyan-700 mb-5 text-sm">
-            <p className='text-xs font-light uppercase tracking-wide font-mono'>
+            <p className="text-xs font-light uppercase tracking-wide font-mono">
               <strong>
-                Complete <span className="text-orange-600 animate-pulse font-bold">Web Report</span> by
-                Wednesday before court{" "}
-                <span className="text-orange-600 animate-pulse font-bold">6pm</span>(DOSA) or{" "}
-                <span className="text-orange-600 animate-pulse font-bold">12pm</span>(DC)!
+                Complete{" "}
+                <span className="text-orange-600 animate-pulse font-bold">
+                  Web Report
+                </span>{" "}
+                by Wednesday before court{" "}
+                <span className="text-orange-600 animate-pulse font-bold">
+                  6pm
+                </span>
+                (DOSA) or{" "}
+                <span className="text-orange-600 animate-pulse font-bold">
+                  12pm
+                </span>
+                (DC)!
               </strong>
             </p>
           </div>

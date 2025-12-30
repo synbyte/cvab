@@ -25,13 +25,13 @@ async function getColors(): Promise<string | null> {
 export default async function Colors() {
   return (
     <>
-      <main className=" animate-slide-down  p-3 text-center text-white rounded-2xl  bg-cyan-50/10 backdrop-blur-sm shadow-sm shadow-gray-400">
+      <main className="animate-slide-down p-6 text-center rounded-2xl bg-white shadow-lg border border-gray-200">
         <div className="">
-          <p className="bg-gradient-to-r from-orange-500 to-fuchsia-500 via-cyan-500 bg-clip-text text-2xl font-extrabold text-transparent">
+          <p className="bg-gradient-to-r from-orange-500 to-fuchsia-500 via-cyan-500 bg-clip-text text-2xl font-extrabold text-transparent mb-4">
             Colorline
           </p>
-          <div className="bg-cyan-400 ring-1 ring-sky-500 mx-5 rounded-md text-cyan-700 mb-5 text-sm">
-            <p className="text-xs font-light uppercase tracking-wide font-mono">
+          <div className="bg-amber-100 border-2 border-amber-300 mx-5 rounded-lg text-amber-900 mb-5 text-sm p-3">
+            <p className="text-xs font-medium uppercase tracking-wide">
               <strong>
                 Complete{" "}
                 <span className="text-orange-600 animate-pulse font-bold">
@@ -51,7 +51,7 @@ export default async function Colors() {
           </div>
 
           <div
-            className="bg-cyan-700 rounded-lg shadow-sm shadow-gray-400 border-cyan-500 border-2 p-3  w-5/6 mx-auto"
+            className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg shadow-md border-2 border-blue-200 p-4 w-5/6 mx-auto"
             dangerouslySetInnerHTML={{ __html: (await getColors()) ?? "" }}
           ></div>
 

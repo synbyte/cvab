@@ -2,16 +2,16 @@ import { docketData } from "@/app/data/docketData";
 
 export default function Links() {
   return (
-    <main className=" animate-slide-down p-3 text-center text-black rounded-2xl shadow-sm card shadow-gray-400 min-w-fit bg-cyan-50/10 backdrop-blur-sm">
-      <p className="pb-4 text-2xl font-medium text-cyan-800 heading ">
+    <main className="animate-slide-down p-6 text-center rounded-2xl shadow-lg min-w-fit bg-white border border-gray-200">
+      <p className="pb-4 text-2xl font-semibold text-gray-800 heading">
         Docket Zoom Links
       </p>
-      <ul className="text-left text-cyan-700">
+      <ul className="text-left text-gray-700">
         {Object.entries(docketData).map(([category, items]) => (
-          <div key={category}>
-            <p className="font-medium text-cyan-800">{category}</p>
+          <div key={category} className="mb-4">
+            <p className="font-semibold text-blue-700 mb-2">{category}</p>
             {items.map((item, index) => (
-              <li key={index}>
+              <li key={index} className="ml-2 hover:text-blue-600 transition-colors">
                 <a href={item.link}>
                   {item.time}{" "}
                   {"description" in item && item.description

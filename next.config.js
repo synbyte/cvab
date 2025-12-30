@@ -5,11 +5,7 @@ const withPWA = require("next-pwa")({
     skipWaiting: true,
     disable: process.env.NODE_ENV === "development", // Disable in dev mode
   });
-  
-  const nextConfig = withPWA({
-    experimental: {
-      appDir: true, // Enable App Router
-    },
-  });
+
+  const nextConfig = withPWA({});
 
 module.exports = nextConfig

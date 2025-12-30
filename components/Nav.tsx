@@ -39,10 +39,10 @@ export default function Nav() {
 
   return (
     <nav
-      className={`${raleway.className} top-0 z-40 fixed w-full py-3 shadow shadow-gray-400 bg-cyan-50/10 backdrop-blur-lg align-baseline flex`}
+      className={`${raleway.className} top-0 z-40 fixed w-full py-3 shadow-md bg-white border-b border-gray-200 align-baseline flex`}
     >
       <ul
-        className={`text-cyan-900 text-sm md:text-lg space-x-2 md:space-x-8 hidden sm:flex `}
+        className={`text-gray-700 text-sm md:text-lg space-x-2 md:space-x-8 hidden sm:flex `}
       >
         <li className="">
           <a
@@ -83,9 +83,9 @@ export default function Nav() {
             Forms
           </a>
         </li>
-        <li className="text-orange-500 font-bold relative dropdown-container">
+        <li className="text-orange-600 font-bold relative dropdown-container">
           <span
-            className="cursor-pointer text-shadow-md truncate bg-orange-500/20 border-2 border-orange-500 hover:bg-orange-500/30 transition-all rounded-full p-1"
+            className="cursor-pointer truncate bg-orange-100 border-2 border-orange-400 hover:bg-orange-200 transition-all rounded-full px-3 py-1"
             onClick={() => setIsOpen(!isOpen)}
           >
             Web Report
@@ -93,34 +93,34 @@ export default function Nav() {
           <div
             className={`absolute right-1 animate-slide-down ${
               isOpen ? "block" : "hidden"
-            } bg-white shadow-lg rounded-md mt-2`}
+            } bg-white shadow-lg rounded-md mt-2 border border-gray-200`}
           >
             <a
               id="drop"
               href="https://treatment-court.clark.wa.gov/?id=1"
-              className="drop block px-4 py-2 hover:bg-gray-100 font-medium text-xs"
+              className="drop block px-4 py-2 hover:bg-gray-50 font-medium text-xs text-gray-700"
             >
               DC/DOSA/FTC
             </a>
             <a
               href="https://treatment-court.clark.wa.gov/?id=2"
-              className="drop block px-4 py-2 hover:bg-gray-100 font-medium text-xs"
+              className="drop block px-4 py-2 hover:bg-gray-50 font-medium text-xs text-gray-700"
             >
               Other
             </a>
           </div>
         </li>
       </ul>
-      <div className="justify-end flex sm:hidden text-black w-full py-2 px-5">
+      <div className="justify-end flex sm:hidden text-gray-700 w-full py-2 px-5">
         <div className="relative group">
           <div className="flex flex-col space-y-[2px]">
-            <span className="w-8 h-[6px] border-b-[3px] border-cyan-900 rounded-md"></span>
-            <span className="w-8 h-[6px] border-b-[3px] border-cyan-900 rounded-md"></span>
-            <span className="w-8 h-[6px] border-b-[3px] border-cyan-900 rounded-md"></span>
+            <span className="w-8 h-[6px] border-b-[3px] border-gray-700 rounded-md"></span>
+            <span className="w-8 h-[6px] border-b-[3px] border-gray-700 rounded-md"></span>
+            <span className="w-8 h-[6px] border-b-[3px] border-gray-700 rounded-md"></span>
           </div>
 
-          <div className="absolute right-0 hidden group-hover:block bg-neutral-100 text-black flex-col mt-2 py-4 px-1 rounded-md shadow-lg">
-            <ul className={`text-cyan-900 flex flex-col space-y-2`}>
+          <div className="absolute right-0 hidden group-hover:block bg-white text-gray-700 flex-col mt-2 py-4 px-1 rounded-md shadow-lg border border-gray-200">
+            <ul className={`text-gray-700 flex flex-col space-y-2`}>
               <li className="">
                 <a
                   id="link"
@@ -160,9 +160,9 @@ export default function Nav() {
                   Forms
                 </a>
               </li>
-              <li className="text-orange-500 font-bold relative dropdown-container">
+              <li className="text-orange-600 font-bold relative dropdown-container">
                 <span
-                  className="cursor-pointer text-shadow-md truncate transition-all rounded-full p-1"
+                  className="cursor-pointer truncate transition-all rounded-full px-3 py-1 bg-orange-100 border-2 border-orange-400"
                   onClick={() => setIsOpen(!isOpen)}
                 >
                   Web Report
@@ -170,18 +170,18 @@ export default function Nav() {
                 <div
                   className={`absolute right-1 animate-slide-down ${
                     isOpen ? "block" : "hidden"
-                  } bg-white shadow-lg rounded-md mt-2`}
+                  } bg-white shadow-lg rounded-md mt-2 border border-gray-200`}
                 >
                   <a
                     id="drop"
                     href="https://treatment-court.clark.wa.gov/?id=1"
-                    className="drop block px-4 py-2 hover:bg-gray-100 font-medium text-xs"
+                    className="drop block px-4 py-2 hover:bg-gray-50 font-medium text-xs text-gray-700"
                   >
                     DC/DOSA/FTC
                   </a>
                   <a
                     href="https://treatment-court.clark.wa.gov/?id=2"
-                    className="drop block px-4 py-2 hover:bg-gray-100 font-medium text-xs"
+                    className="drop block px-4 py-2 hover:bg-gray-50 font-medium text-xs text-gray-700"
                   >
                     Other
                   </a>

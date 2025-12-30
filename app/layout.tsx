@@ -30,13 +30,9 @@ export default function RootLayout({
       </Head>
       <body
         style={{
-          backgroundImage:
-            "url(https://www.toptal.com/designers/subtlepatterns/uploads/double-bubble-outline.png)",
-          backgroundSize: "tile",
-          backgroundPosition: "center",
-          backgroundAttachment: "fixed",
+          backgroundColor: "#f0f4f8",
           height: "100vh",
-          color: "white",
+          color: "#2d3748",
           margin: 0,
           padding: 0,
           display: "flex",

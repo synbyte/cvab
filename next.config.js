@@ -7,9 +7,7 @@ const withPWA = require("next-pwa")({
   });
   
   const nextConfig = withPWA({
-    experimental: {
-      appDir: true, // Enable App Router
-    },
+    // appDir is enabled by default in this version of Next.js
   });
 
 module.exports = nextConfig

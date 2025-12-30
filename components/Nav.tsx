@@ -39,10 +39,10 @@ export default function Nav() {
 
   return (
     <nav
-      className={`${raleway.className} top-0 z-40 fixed w-full py-3 shadow shadow-gray-400 bg-cyan-50/10 backdrop-blur-lg align-baseline flex`}
+      className={`${raleway.className} top-0 z-40 fixed w-full py-3 shadow shadow-gray-400 bg-coffee-light backdrop-blur-lg align-baseline flex`}
     >
       <ul
-        className={`text-cyan-900 text-sm md:text-lg space-x-2 md:space-x-8 hidden sm:flex `}
+        className={`text-coffee-dark text-sm md:text-lg space-x-2 md:space-x-8 hidden sm:flex `}
       >
         <li className="">
           <a
@@ -114,13 +114,13 @@ export default function Nav() {
       <div className="justify-end flex sm:hidden text-black w-full py-2 px-5">
         <div className="relative group">
           <div className="flex flex-col space-y-[2px]">
-            <span className="w-8 h-[6px] border-b-[3px] border-cyan-900 rounded-md"></span>
-            <span className="w-8 h-[6px] border-b-[3px] border-cyan-900 rounded-md"></span>
-            <span className="w-8 h-[6px] border-b-[3px] border-cyan-900 rounded-md"></span>
+            <span className="w-8 h-[6px] border-b-[3px] border-coffee-dark rounded-md"></span>
+            <span className="w-8 h-[6px] border-b-[3px] border-coffee-dark rounded-md"></span>
+            <span className="w-8 h-[6px] border-b-[3px] border-coffee-dark rounded-md"></span>
           </div>
 
-          <div className="absolute right-0 hidden group-hover:block bg-neutral-100 text-black flex-col mt-2 py-4 px-1 rounded-md shadow-lg">
-            <ul className={`text-cyan-900 flex flex-col space-y-2`}>
+          <div className="absolute right-0 hidden group-hover:block bg-coffee-light text-black flex-col mt-2 py-4 px-1 rounded-md shadow-lg">
+            <ul className={`text-coffee-dark flex flex-col space-y-2`}>
               <li className="">
                 <a
                   id="link"

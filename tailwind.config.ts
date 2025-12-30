@@ -8,6 +8,16 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        'coffee': {
+          light: '#E6D8C6',
+          DEFAULT: '#D2B48C',
+          dark: '#A58F78',
+        },
+        'pastel-green': '#C1E1C1',
+        'pastel-blue': '#AEC6CF',
+        'pastel-pink': '#F6C6EA',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

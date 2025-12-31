@@ -1,5 +1,5 @@
 import { Analytics } from "@vercel/analytics/next";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Raleway } from "next/font/google";
 import "./globals.scss";
 import Nav from "@/components/Nav";
@@ -13,8 +13,11 @@ const raleway = Raleway({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "TC-Info",
   description: "Therapeutic Courts Information",
-  themeColor: "#000000",
   manifest: "/manifest.json",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#000000",
 };
 
 export default function RootLayout({
@@ -26,7 +29,6 @@ export default function RootLayout({
     <html lang="en">
       <Head>
       <link rel="manifest" href="/manifest.json" />
-      <meta name="theme-color" content="#000000" />
       </Head>
       <body
         style={{

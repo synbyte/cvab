@@ -37,8 +37,8 @@ function ColorLoading() {
   return (
     <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg shadow-md border-2 border-blue-200 p-4 w-5/6 mx-auto animate-pulse">
       <div className="flex flex-col items-center gap-2">
-        <div className="h-8 bg-blue-100 rounded-md w-3/4"></div>
-        <div className="h-4 bg-blue-50 rounded-md w-1/2"></div>
+        <div className="h-8 bg-blue-100 rounded-md w-3/4">Loading...</div>
+        <div className="h-4 bg-blue-50 rounded-md w-1/2">Loading...</div>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import cheerio from "cheerio";
+import { Suspense } from "react";
 
 async function getColors(): Promise<string | null> {
   try {
@@ -22,7 +23,28 @@ async function getColors(): Promise<string | null> {
   }
 }
 
-export default async function Colors() {
+async function ColorContent() {
+  const colors = await getColors();
+  return (
+    <div
+      className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg shadow-md border-2 border-blue-200 p-4 w-5/6 mx-auto"
+      dangerouslySetInnerHTML={{ __html: colors ?? "" }}
+    ></div>
+  );
+}
+
+function ColorLoading() {
+  return (
+    <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg shadow-md border-2 border-blue-200 p-4 w-5/6 mx-auto animate-pulse">
+      <div className="flex flex-col items-center gap-2">
+        <div className="h-8 bg-blue-100 rounded-md w-3/4"></div>
+        <div className="h-4 bg-blue-50 rounded-md w-1/2"></div>
+      </div>
+    </div>
+  );
+}
+
+export default function Colors() {
   return (
     <>
       <main className="animate-slide-down p-6 text-center rounded-2xl bg-white shadow-lg border border-gray-200">
@@ -50,10 +72,9 @@ export default async function Colors() {
             </p>
           </div>
 
-          <div
-            className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg shadow-md border-2 border-blue-200 p-4 w-5/6 mx-auto"
-            dangerouslySetInnerHTML={{ __html: (await getColors()) ?? "" }}
-          ></div>
+          <Suspense fallback={<ColorLoading />}>
+            <ColorContent />
+          </Suspense>
 
           <ul>
             <li> </li>

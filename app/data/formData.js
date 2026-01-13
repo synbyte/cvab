@@ -8,7 +8,7 @@ export const formData = {
         { href: "https://clark.wa.gov/media/document/56221", text: "Application to phase up to 3 Drug Court" },
         { href: "https://clark.wa.gov/media/document/56222", text: "Application to phase up to 4 Drug Court" },
         { href: "https://clark.wa.gov/media/document/56219", text: "Application to graduate Drug Court" },
-        { href: "https://clark.wa.gov/media/document/56223", text: "Community service log with sites" },
+        { href: "https://clark.wa.gov/media/document/216971", text: "Community service log with sites" },
         { href: "https://clark.wa.gov/media/document/56224", text: "Needs Assessment Form" },
         { href: "https://clark.wa.gov/media/document/56225", text: "Job Search Form" },
         { href: "https://clark.wa.gov/media/document/106901", text: "Health Care Form" },
@@ -21,7 +21,9 @@ export const formData = {
         { href: "https://clark.wa.gov/media/document/181586", text: "Court approved housing interview form" },
         
         { href: "https://forms.office.com/g/6YfVva7i7R", text: "Drug Court/DOSA Exit Interview" },
-        { href: "https://clark.wa.gov/media/document/188261", text: "Fix it ticket" }
+        { href: "https://clark.wa.gov/media/document/188261", text: "Fix it ticket" },
+        { href: "https://clark.wa.gov/media/document/206211", text: "Reflection Bingo Card" },
+        { href: "https://clark.wa.gov/media/document/206281", text: "Work Crew Instructions" }
       ]
     },
     familyTreatment: {

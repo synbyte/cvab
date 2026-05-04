@@ -1,5 +1,6 @@
 import cheerio from "cheerio";
 import { Suspense } from "react";
+import { ColorBoundry } from './ColorBoundry';
 
 async function getColors(): Promise<string | null> {
   try {
@@ -9,12 +10,23 @@ async function getColors(): Promise<string | null> {
       headers: {
         "Content-Type": "text/html",
       },
-      next: { revalidate: 0 },
+      next: { revalidate: 3600 }, // Cache for 1 hour
       cache: "no-store",
+      signal: AbortSignal.timeout(5000), // Fail fast at 5 seconds
     });
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+
     const content = await response.text();
     const $ = cheerio.load(content);
     const item = $(".cl-line-container").html();
+
+    if (!item) {
+      return "<div class='text-yellow-100 bg-yellow-500/60 p-3 rounded-md border-yellow-500 border-2 font-bold'>No color data available.</div>";
+    }
+
     console.log("Colors fetched: ", $(".cl-line-container div").text());
     return item;
   } catch (error) {
@@ -22,6 +34,7 @@ async function getColors(): Promise<string | null> {
     return "<div class='text-red-100 bg-red-500/60 p-3 rounded-md border-red-500 border-2 font-bold'>Error fetching colors, check Lifeline Connections website.</div>";
   }
 }
+
 
 async function ColorContent() {
   const colors = await getColors();
@@ -71,11 +84,11 @@ export default function Colors() {
               </strong>
             </p>
           </div>
-
+<ColorBoundry>
           <Suspense fallback={<ColorLoading />}>
             <ColorContent />
           </Suspense>
-
+</ColorBoundry>
           <ul>
             <li> </li>
           </ul>

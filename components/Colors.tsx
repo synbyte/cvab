@@ -1,4 +1,4 @@
-"use server";
+
 import cheerio from "cheerio";
 import { Suspense } from "react";
 import { ColorBoundary } from "./ColorBoundary";

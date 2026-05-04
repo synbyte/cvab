@@ -1,6 +1,6 @@
 import cheerio from "cheerio";
 import { Suspense } from "react";
-import { ColorBoundry } from './ColorBoundry';
+import { ColorBoundary } from "./ColorBoundary";
 
 async function getColors(): Promise<string | null> {
   try {
@@ -84,11 +84,11 @@ export default function Colors() {
               </strong>
             </p>
           </div>
-<ColorBoundry>
+<ColorBoundary>
           <Suspense fallback={<ColorLoading />}>
             <ColorContent />
           </Suspense>
-</ColorBoundry>
+</ColorBoundary>
           <ul>
             <li> </li>
           </ul>

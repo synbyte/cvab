@@ -1,3 +1,4 @@
+"use server";
 import cheerio from "cheerio";
 import { Suspense } from "react";
 import { ColorBoundary } from "./ColorBoundary";
@@ -10,7 +11,6 @@ async function getColors(): Promise<string | null> {
       headers: {
         "Content-Type": "text/html",
       },
-      next: { revalidate: 3600 }, // Cache for 1 hour
       cache: "no-store",
       signal: AbortSignal.timeout(5000), // Fail fast at 5 seconds
     });

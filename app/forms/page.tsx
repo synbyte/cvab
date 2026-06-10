@@ -6,8 +6,9 @@ export default async function Home() {
         <p className="pb-[-4] text-3xl font-semibold text-gray-800 heading">
           Forms and Documents
         </p>
-       
-               <span className="text-red-700 text-lg font-bold tracking-wide">🔒 Password: TSC-COURT</span>
+        <div className="mb-6 mx-auto md:w-2/3 bg-red-100 border-2 border-red-500 rounded-lg px-5 py-3 flex items-center justify-center gap-2">
+          <span className="text-red-700 text-lg font-bold tracking-wide">🔒 Password: TSC-COURT</span>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
           {Object.values(formData).map((section, index) => (
             <div key={index} className="mb-6">

@@ -3,16 +3,28 @@ import cheerio from "cheerio";
 import { Suspense } from "react";
 import { ColorBoundary } from "./ColorBoundary";
 
+const COLOR_LINE_REVALIDATE_SECONDS = 900;
+
+function isNextDynamicUsageError(error: unknown): boolean {
+  if (!(error instanceof Error)) {
+    return false;
+  }
+  if (error.message.includes("Dynamic server usage")) {
+    return true;
+  }
+  const digest = (error as Error & { digest?: string }).digest;
+  return digest === "DYNAMIC_SERVER_USAGE";
+}
+
 async function getColors(): Promise<string | null> {
   try {
     const response = await fetch("https://lifelineconnections.org/color-line/", {
       method: "GET",
-      mode: "no-cors",
       headers: {
         "Content-Type": "text/html",
       },
-      cache: "no-store",
-      signal: AbortSignal.timeout(5000), // Fail fast at 5 seconds
+      next: { revalidate: COLOR_LINE_REVALIDATE_SECONDS },
+      signal: AbortSignal.timeout(15000),
     });
 
     if (!response.ok) {
@@ -30,6 +42,9 @@ async function getColors(): Promise<string | null> {
     console.log("Colors fetched: ", $(".cl-line-container div").text());
     return item;
   } catch (error) {
+    if (isNextDynamicUsageError(error)) {
+      throw error;
+    }
     console.error("Error fetching colors: ", error);
     return "<div class='text-red-100 bg-red-500/60 p-3 rounded-md border-red-500 border-2 font-bold'>Error fetching colors, check Lifeline Connections website.</div>";
   }

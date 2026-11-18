@@ -74,7 +74,7 @@ export default function InstallPrompt() {
     >
       <button
         type="button"
-        className="absolute inset-0 bg-slate-900/45 backdrop-blur-sm animate-install-backdrop-in"
+        className="tc-modal-backdrop"
         aria-label="Close install dialog"
         onClick={dismiss}
       />
@@ -84,38 +84,35 @@ export default function InstallPrompt() {
         aria-modal="true"
         aria-labelledby="install-prompt-title"
         aria-describedby="install-prompt-description"
-        className="relative z-[1] w-full max-w-md animate-install-modal-in rounded-2xl border border-gray-200 bg-white p-6 shadow-2xl sm:p-8"
+        className="tc-modal"
         onClick={(event) => event.stopPropagation()}
       >
         <div className="flex flex-col items-center text-center">
           <AppIcon />
-          <h2
-            id="install-prompt-title"
-            className="mt-4 text-xl font-semibold text-gray-900 sm:text-2xl"
-          >
+          <h2 id="install-prompt-title" className="mt-4 text-xl font-semibold text-ink sm:text-2xl">
             Install TC Info
           </h2>
           <p
             id="install-prompt-description"
-            className="mt-2 text-sm leading-relaxed text-gray-600 sm:text-base"
+            className="tc-muted mt-2 max-w-sm sm:text-base"
           >
             Add this app to your home screen for quick access to docket links,
             the color line, and court resources.
           </p>
         </div>
 
-        <div className="mt-6 flex flex-col-reverse gap-3 sm:flex-row sm:justify-stretch">
+        <div className="mt-6 flex flex-col-reverse gap-3 sm:flex-row">
           <button
             type="button"
             onClick={dismiss}
-            className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm font-semibold text-gray-700 transition hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 sm:flex-1"
+            className="tc-btn-secondary w-full sm:flex-1"
           >
             Not now
           </button>
           <button
             type="button"
             onClick={handleInstallClick}
-            className="w-full rounded-xl bg-blue-600 px-4 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 sm:flex-1"
+            className="tc-btn-primary w-full sm:flex-1"
           >
             Install
           </button>
@@ -127,8 +124,8 @@ export default function InstallPrompt() {
 
 function AppIcon() {
   return (
-    <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-100 via-cyan-50 to-fuchsia-100 p-1 shadow-inner sm:h-24 sm:w-24">
-      <div className="relative h-full w-full overflow-hidden rounded-[14px] bg-white shadow-sm">
+    <div className="flex h-20 w-20 items-center justify-center rounded-card border border-brand-100 bg-brand-panel p-1 shadow-card sm:h-24 sm:w-24">
+      <div className="relative h-full w-full overflow-hidden rounded-panel bg-white">
         <Image
           src="/icons/android-chrome-192x192.png"
           alt=""

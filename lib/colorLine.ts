@@ -7,10 +7,10 @@ export const COLOR_LINE_FETCH_TIMEOUT_MS = 15000;
 const COLOR_LINE_URL = "https://lifelineconnections.org/color-line/";
 
 export const COLOR_LINE_ERROR_HTML =
-  "<div class='text-red-100 bg-red-500/60 p-3 rounded-md border-red-500 border-2 font-bold'>Error fetching colors. Press the refresh button or check the Lifeline Connections website.</div>";
+  "<div class='tc-alert-error'>Error fetching colors. Press the refresh button or check the Lifeline Connections website.</div>";
 
 export const COLOR_LINE_NO_DATA_HTML =
-  "<div class='text-yellow-100 bg-yellow-500/60 p-3 rounded-md border-yellow-500 border-2 font-bold'>No color data available.</div>";
+  "<div class='tc-alert-warning'>No color data available.</div>";
 
 const MONTH_INDEX: Record<string, number> = {
   january: 0,

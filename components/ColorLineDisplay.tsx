@@ -41,18 +41,18 @@ export default function ColorLineDisplay({ initialResult }: Props) {
   const isRefreshing = isPending;
 
   return (
-    <div className="relative bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg shadow-md border-2 border-blue-200 p-4 pt-10 w-5/6 mx-auto">
+    <div className="tc-color-panel mx-auto max-w-full">
       <button
         type="button"
         onClick={onRefresh}
         disabled={isRefreshing}
         aria-label="Refresh colors"
-        className="absolute top-2 right-2 flex h-9 w-9 items-center justify-center rounded-full border border-blue-200 bg-white/90 text-blue-700 shadow-sm transition hover:bg-blue-50 hover:text-blue-900 disabled:cursor-not-allowed disabled:opacity-60 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+        className="tc-btn-icon"
       >
         <RefreshIcon spinning={isRefreshing} />
       </button>
       <div
-        className={isRefreshing ? "opacity-60 pointer-events-none" : ""}
+        className={isRefreshing ? "pointer-events-none opacity-60" : ""}
         dangerouslySetInnerHTML={{ __html: result.html }}
       />
     </div>

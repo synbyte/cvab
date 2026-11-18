@@ -1,64 +1,15 @@
 
-import cheerio from "cheerio";
 import { Suspense } from "react";
 import { ColorBoundary } from "./ColorBoundary";
-
-const COLOR_LINE_REVALIDATE_SECONDS = 900;
-
-function isNextDynamicUsageError(error: unknown): boolean {
-  if (!(error instanceof Error)) {
-    return false;
-  }
-  if (error.message.includes("Dynamic server usage")) {
-    return true;
-  }
-  const digest = (error as Error & { digest?: string }).digest;
-  return digest === "DYNAMIC_SERVER_USAGE";
-}
-
-async function getColors(): Promise<string | null> {
-  try {
-    const response = await fetch("https://lifelineconnections.org/color-line/", {
-      method: "GET",
-      headers: {
-        "Content-Type": "text/html",
-      },
-      next: { revalidate: COLOR_LINE_REVALIDATE_SECONDS },
-      signal: AbortSignal.timeout(15000),
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}`);
-    }
-
-    const content = await response.text();
-    const $ = cheerio.load(content);
-    const item = $(".cl-line-container").html();
-
-    if (!item) {
-      return "<div class='text-yellow-100 bg-yellow-500/60 p-3 rounded-md border-yellow-500 border-2 font-bold'>No color data available.</div>";
-    }
-
-    console.log("Colors fetched: ", $(".cl-line-container div").text());
-    return item;
-  } catch (error) {
-    if (isNextDynamicUsageError(error)) {
-      throw error;
-    }
-    console.error("Error fetching colors: ", error);
-    return "<div class='text-red-100 bg-red-500/60 p-3 rounded-md border-red-500 border-2 font-bold'>Error fetching colors, check Lifeline Connections website.</div>";
-  }
-}
-
+import ColorLineDisplay from "./ColorLineDisplay";
+import { fetchColorLineForPage } from "@/lib/colorLine";
 
 async function ColorContent() {
-  const colors = await getColors();
-  return (
-    <div
-      className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg shadow-md border-2 border-blue-200 p-4 w-5/6 mx-auto"
-      dangerouslySetInnerHTML={{ __html: colors ?? "" }}
-    ></div>
-  );
+  const result = await fetchColorLineForPage();
+  if (result.ok) {
+    console.log("Colors fetched for", result.colorLineDateYmd);
+  }
+  return <ColorLineDisplay initialResult={result} />;
 }
 
 function ColorLoading() {
@@ -99,11 +50,11 @@ export default function Colors() {
               </strong>
             </p>
           </div>
-<ColorBoundary>
-          <Suspense fallback={<ColorLoading />}>
-            <ColorContent />
-          </Suspense>
-</ColorBoundary>
+          <ColorBoundary>
+            <Suspense fallback={<ColorLoading />}>
+              <ColorContent />
+            </Suspense>
+          </ColorBoundary>
           <ul>
             <li> </li>
           </ul>

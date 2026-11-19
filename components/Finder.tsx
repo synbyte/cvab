@@ -2,24 +2,21 @@ import Link from "next/link";
 
 export default function Finder() {
   return (
-    <div className="animate-slide-down md:w-5/6 mx-auto my-5 text-center shadow-lg rounded-2xl p-6 bg-white border border-gray-200">
-      <p className="text-2xl font-semibold text-gray-800 heading mb-2">
-        AA Group Finder
-      </p>
-      <p className="text-sm text-gray-600 pb-4">
+    <section className="tc-card text-center">
+      <h2 className="tc-card-title mb-2">AA Group Finder</h2>
+      <p className="tc-muted mb-5">
         (Other meetings can be found on{" "}
-        <Link className="font-semibold underline text-blue-600 hover:text-blue-700" href="/support">
+        <Link className="tc-link-inline" href="/support">
           Groups/Resources
         </Link>{" "}
         page.)
       </p>
       <iframe
-        className="shadow-md rounded-xl border border-gray-200"
+        className="h-[min(600px,70vh)] w-full rounded-panel border border-brand-100 shadow-sm"
         frameBorder="0"
-        height="600px"
-        width="100%"
+        title="AA Group Finder"
         src="https://www.vancouveraa.org/meetings/"
-      ></iframe>
-    </div>
+      />
+    </section>
   );
 }

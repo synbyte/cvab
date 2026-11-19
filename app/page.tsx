@@ -6,18 +6,15 @@ import Finder from '@/components/Finder';
 import InstallPrompt from '@/components/InstallPrompt';
 
 
-export default  function Home() {
-
-
+export default function Home() {
   return (
-    <main className="items-center p-5 min-w-full min-h-screen pt-20">
+    <main className="tc-page flex flex-col gap-6">
       <InstallPrompt />
-      <div className='grid gap-4 mx-auto md:grid-cols-2 md:w-5/6'> 
+      <div className="grid gap-6 lg:grid-cols-2">
         <Colors />
         <Links />
       </div>
       <Finder />
-
     </main>
   );
 }

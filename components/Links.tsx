@@ -2,28 +2,30 @@ import { docketData } from "@/app/data/docketData";
 
 export default function Links() {
   return (
-    <main className="animate-slide-down p-6 text-center rounded-2xl shadow-lg min-w-fit bg-white border border-gray-200">
-      <p className="pb-4 text-2xl font-semibold text-gray-800 heading">
+    <section className="tc-card">
+      <h2 className="tc-card-title mb-5 text-center sm:text-left">
         Docket Zoom Links
-      </p>
-      <ul className="text-left text-gray-700">
+      </h2>
+      <ul className="space-y-5 text-left">
         {Object.entries(docketData).map(([category, items]) => (
-          <div key={category} className="mb-4">
-            <p className="font-semibold text-blue-700 mb-2">{category}</p>
-            {items.map((item, index) => (
-              <li key={index} className="ml-2 hover:text-blue-600 transition-colors">
-                <a href={item.link}>
-                  {item.time}{" "}
-                  {"description" in item && item.description
-                    ? `${item.description} -`
-                    : ""}{" "}
-                  {item.judge}
-                </a>
-              </li>
-            ))}
-          </div>
+          <li key={category} className="list-none">
+            <p className="tc-section-title">{category}</p>
+            <ul className="space-y-1.5 pl-1">
+              {items.map((item, index) => (
+                <li key={index} className="list-none">
+                  <a href={item.link} className="tc-list-item">
+                    {item.time}{" "}
+                    {"description" in item && item.description
+                      ? `${item.description} -`
+                      : ""}{" "}
+                    {item.judge}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </li>
         ))}
       </ul>
-    </main>
+    </section>
   );
 }

@@ -1,13 +1,57 @@
 "use client";
+
 import { usePathname } from "next/navigation";
-import { Raleway } from "next/font/google";
 import { useEffect, useState } from "react";
 import { useCopilotReadable } from "@copilotkit/react-core";
 import { formData } from "@/app/data/formData";
 import { supportData } from "@/app/data/supportData";
 import { docketData } from "@/app/data/docketData";
 
-const raleway = Raleway({ subsets: ["latin"] });
+function navLinkClass(pathname: string, href: string) {
+  const active = pathname === href;
+  return active ? "tc-nav-link tc-nav-link-active" : "tc-nav-link";
+}
+
+function WebReportMenu({
+  isOpen,
+  onToggle,
+}: {
+  isOpen: boolean;
+  onToggle: () => void;
+}) {
+  return (
+    <li className="relative dropdown-container list-none">
+      <button
+        type="button"
+        onClick={onToggle}
+        className="tc-nav-cta"
+        aria-expanded={isOpen}
+        aria-haspopup="true"
+      >
+        Web Report
+      </button>
+      <div
+        className={`tc-nav-menu animate-slide-down ${
+          isOpen ? "block" : "hidden"
+        }`}
+      >
+        <a
+          id="drop"
+          href="https://treatment-court.clark.wa.gov/?id=1"
+          className="tc-nav-menu-item"
+        >
+          DC/DOSA/FTC
+        </a>
+        <a
+          href="https://treatment-court.clark.wa.gov/?id=2"
+          className="tc-nav-menu-item"
+        >
+          Other
+        </a>
+      </div>
+    </li>
+  );
+}
 
 export default function Nav() {
   const pathname = usePathname();
@@ -27,8 +71,10 @@ export default function Nav() {
   });
 
   useEffect(() => {
-    const handleClickOutside = (event: any) => {
-      if (!event.target.closest(".dropdown-container")) {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        !(event.target as HTMLElement).closest(".dropdown-container")
+      ) {
         setIsOpen(false);
       }
     };
@@ -37,157 +83,54 @@ export default function Nav() {
     return () => document.removeEventListener("click", handleClickOutside);
   }, []);
 
-  return (
-    <nav
-      className={`${raleway.className} top-0 z-40 fixed w-full py-3 shadow-md bg-white border-b border-gray-200 align-baseline flex`}
-    >
-      <ul
-        className={`text-gray-700 text-sm md:text-lg space-x-2 md:space-x-8 hidden sm:flex `}
-      >
-        <li className="">
-          <a
-            id="link"
-            href="/"
-            className={
-              pathname === "/"
-                ? "underline decoration-1 decoration-wavy transition-all underline-offset-4"
-                : ""
-            }
-          >
-            Home
-          </a>
-        </li>
-        <li className="">
-          <a
-            id="link"
-            href="/support"
-            className={
-              pathname === "/support"
-                ? "underline decoration-1 decoration-wavy transition-all underline-offset-4"
-                : ""
-            }
-          >
-            Groups/Resources
-          </a>
-        </li>
-        <li className="">
-          <a
-            id="link"
-            href="/forms"
-            className={
-              pathname === "/forms"
-                ? "underline decoration-1 decoration-wavy transition-all underline-offset-4 "
-                : ""
-            }
-          >
-            Forms
-          </a>
-        </li>
-        <li className="text-orange-600 font-bold relative dropdown-container">
-          <span
-            className="cursor-pointer truncate bg-orange-100 border-2 border-orange-400 hover:bg-orange-200 transition-all rounded-full px-3 py-1"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            Web Report
-          </span>
-          <div
-            className={`absolute right-1 animate-slide-down ${
-              isOpen ? "block" : "hidden"
-            } bg-white shadow-lg rounded-md mt-2 border border-gray-200`}
-          >
-            <a
-              id="drop"
-              href="https://treatment-court.clark.wa.gov/?id=1"
-              className="drop block px-4 py-2 hover:bg-gray-50 font-medium text-xs text-gray-700"
-            >
-              DC/DOSA/FTC
-            </a>
-            <a
-              href="https://treatment-court.clark.wa.gov/?id=2"
-              className="drop block px-4 py-2 hover:bg-gray-50 font-medium text-xs text-gray-700"
-            >
-              Other
-            </a>
-          </div>
-        </li>
-      </ul>
-      <div className="justify-end flex sm:hidden text-gray-700 w-full py-2 px-5">
-        <div className="relative group">
-          <div className="flex flex-col space-y-[2px]">
-            <span className="w-8 h-[6px] border-b-[3px] border-gray-700 rounded-md"></span>
-            <span className="w-8 h-[6px] border-b-[3px] border-gray-700 rounded-md"></span>
-            <span className="w-8 h-[6px] border-b-[3px] border-gray-700 rounded-md"></span>
-          </div>
+  const navItems = (
+    <>
+      <li className="list-none">
+        <a id="link" href="/" className={navLinkClass(pathname, "/")}>
+          Home
+        </a>
+      </li>
+      <li className="list-none">
+        <a
+          id="link"
+          href="/support"
+          className={navLinkClass(pathname, "/support")}
+        >
+          Groups/Resources
+        </a>
+      </li>
+      <li className="list-none">
+        <a id="link" href="/forms" className={navLinkClass(pathname, "/forms")}>
+          Forms
+        </a>
+      </li>
+      <WebReportMenu isOpen={isOpen} onToggle={() => setIsOpen(!isOpen)} />
+    </>
+  );
 
-          <div className="absolute right-0 hidden group-hover:block bg-white text-gray-700 flex-col mt-2 py-4 px-1 rounded-md shadow-lg border border-gray-200">
-            <ul className={`text-gray-700 flex flex-col space-y-2`}>
-              <li className="">
-                <a
-                  id="link"
-                  href="/"
-                  className={
-                    pathname === "/"
-                      ? "underline decoration-1 decoration-wavy transition-all underline-offset-4"
-                      : ""
-                  }
-                >
-                  Home
-                </a>
-              </li>
-              <li className="">
-                <a
-                  id="link"
-                  href="/support"
-                  className={
-                    pathname === "/support"
-                      ? "underline decoration-1 decoration-wavy transition-all underline-offset-4"
-                      : ""
-                  }
-                >
-                  Groups/Resources
-                </a>
-              </li>
-              <li className="">
-                <a
-                  id="link"
-                  href="/forms"
-                  className={
-                    pathname === "/forms"
-                      ? "underline decoration-1 decoration-wavy transition-all underline-offset-4 "
-                      : ""
-                  }
-                >
-                  Forms
-                </a>
-              </li>
-              <li className="text-orange-600 font-bold relative dropdown-container">
-                <span
-                  className="cursor-pointer truncate transition-all rounded-full px-3 py-1 bg-orange-100 border-2 border-orange-400"
-                  onClick={() => setIsOpen(!isOpen)}
-                >
-                  Web Report
-                </span>
-                <div
-                  className={`absolute right-1 animate-slide-down ${
-                    isOpen ? "block" : "hidden"
-                  } bg-white shadow-lg rounded-md mt-2 border border-gray-200`}
-                >
-                  <a
-                    id="drop"
-                    href="https://treatment-court.clark.wa.gov/?id=1"
-                    className="drop block px-4 py-2 hover:bg-gray-50 font-medium text-xs text-gray-700"
-                  >
-                    DC/DOSA/FTC
-                  </a>
-                  <a
-                    href="https://treatment-court.clark.wa.gov/?id=2"
-                    className="drop block px-4 py-2 hover:bg-gray-50 font-medium text-xs text-gray-700"
-                  >
-                    Other
-                  </a>
-                </div>
-              </li>
-            </ul>
+  return (
+    <nav className="tc-nav">
+      <div className="tc-nav-inner">
+        <a href="/" className="tc-nav-brand no-underline">
+          TC Info
+        </a>
+
+        <ul className="tc-nav-links">{navItems}</ul>
+
+        <div className="flex sm:hidden">
+          <div className="group relative">
+            <button
+              type="button"
+              className="tc-focus flex flex-col gap-1 rounded-panel border border-brand-100 bg-white p-2"
+              aria-label="Open menu"
+            >
+              <span className="block h-0.5 w-7 rounded bg-ink" />
+              <span className="block h-0.5 w-7 rounded bg-ink" />
+              <span className="block h-0.5 w-7 rounded bg-ink" />
+            </button>
+            <div className="tc-nav-menu absolute right-0 hidden group-hover:block">
+              <ul className="flex flex-col gap-1 p-1">{navItems}</ul>
+            </div>
           </div>
         </div>
       </div>

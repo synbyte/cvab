@@ -1,29 +1,30 @@
 import { formData } from "../data/formData";
+
 export default async function Home() {
   return (
-    <main className="animate-slide-down items-center p-5 min-w-full min-h-screen pt-20">
-      <div className="grid p-6 mx-auto text-center rounded-2xl shadow-lg bg-white border border-gray-200 md:w-5/6">
-        <p className="pb-[-4] text-3xl font-semibold text-gray-800 heading">
-          Forms and Documents
-        </p>
-        <div className="mb-6 mx-auto md:w-2/3 bg-red-100 border-2 border-red-500 rounded-lg px-5 py-3 flex items-center justify-center gap-2">
-          <span className="text-red-700 text-lg font-bold tracking-wide">🔒 Password: TSC-COURT</span>
+    <main className="tc-page">
+      <section className="tc-card">
+        <h1 className="tc-card-title mb-6 text-center">Forms and Documents</h1>
+        <div className="tc-banner-password mx-auto mb-8 max-w-xl">
+          🔒 Password: TSC-COURT
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div className="tc-form-grid">
           {Object.values(formData).map((section, index) => (
-            <div key={index} className="mb-6">
-              <ul className="text-left text-gray-700">
-                <p className="font-semibold text-blue-700 mb-2">{section.title}</p>
+            <div key={index}>
+              <p className="tc-section-title">{section.title}</p>
+              <ul className="space-y-1.5">
                 {section.forms.map((form, formIndex) => (
-                  <li key={formIndex} className="text-sm hover:text-blue-600 transition-colors">
-                    <a href={form.href}>{form.text}</a>
+                  <li key={formIndex} className="list-none">
+                    <a href={form.href} className="tc-list-item">
+                      {form.text}
+                    </a>
                   </li>
                 ))}
               </ul>
             </div>
           ))}
         </div>
-      </div>
+      </section>
     </main>
   );
 }
